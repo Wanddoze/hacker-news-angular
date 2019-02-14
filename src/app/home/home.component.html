@@ -1,0 +1,30 @@
+<section id="contact" class="content-section text-center">
+  <div class="contact-section">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <form class="form-horizontal" [formGroup]="form" (ngSubmit)="submit()">
+            <div class="form-group ">
+              <label for="exampleInputText" 
+                class="pull-left" 
+                title="o texto para vericicação deve ser inserido na caixa de texto a baixo">
+                <h4>
+                  Texto
+                </h4>
+              </label>
+              <textarea formControlName="vericationTxt" class="form-control" placeholder="Cole o texto aqui"></textarea>
+            </div>
+            <button 
+              type="submit"
+              (click)="call()" 
+              [disabled]="form.invalid" 
+              class="pull-right btn btn-lg btn-info" 
+              title="Clicando aqui seu texto será verificado">Verificar
+              <i class="fas fa-home"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

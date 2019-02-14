@@ -1,0 +1,13 @@
+/**
+ * Global Application Styles
+ */
+@import "constants";
+
+@import "~ag-grid/dist/styles/ag-grid.css";
+@import "~ag-grid/dist/styles/ag-theme-balham.css";
+
+@import "styles";
+
+.ag-theme-balham .ag-header-group-cell-label span {
+    float: right;
+}
