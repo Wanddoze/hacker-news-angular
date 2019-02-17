@@ -10,29 +10,21 @@ import { NewsService } from '../service/news.service';
 export class HomeComponent implements OnInit {
   
   public form: FormGroup;
-
+  public articles: any[] = [];
   constructor(private _fb: FormBuilder, private newService: NewsService) { }
 
   ngOnInit() {
-    this.initFormValues()
+    this.processNewService()
   }
 
-  public initFormValues(){
-    this.form = this._fb.group({
-      vericationTxt: ['', Validators.required],
-    })
-  }
-
-  public async submit(){
-    console.log(this.form.invalid)
-    console.log(this.form.value)
-    if(this.form.invalid){
-      console.log('Form invalid, show message!');
+  async processNewService(){
+    try {
+      let resp:any = await this.newService.getNewsService()
+      console.log('resp> : ', resp.status);
+      if(resp.status == 'ok')
+        this.articles = resp.articles;
+    } catch (error) {
+      console.error(error)
     }
-  }
-  public async call(){
-    console.log('----call-----');
-    let r = await this.newService.getNewsService();
-    console.log('------> ', r);
   }
 }
