@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { HomeRoutes } from './home.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NavbarComponent } from '../components/navbar/navbar.component';
 
 
 @NgModule({
@@ -13,7 +12,7 @@ import { NavbarComponent } from '../components/navbar/navbar.component';
     , ReactiveFormsModule
     , HomeRoutes    
   ],
-  declarations: [HomeComponent, NavbarComponent]
+  declarations: [HomeComponent]
 })
 export class HomeModule { 
 }

@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { rootRouterConfig } from './app.routes';
 import { BrowserModule } from '@angular/platform-browser';
 import { NewsService } from './service/news.service';
+import { NavbarComponent } from './navbar/navbar.component';
 
 export class DefaultRequestOptions extends BaseRequestOptions {
   headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
@@ -14,7 +15,7 @@ export class DefaultRequestOptions extends BaseRequestOptions {
 }
 
 @NgModule({
-  declarations: [ AppComponent ],
+  declarations: [ AppComponent, NavbarComponent ],
   imports: [
     BrowserModule
     , HttpModule
